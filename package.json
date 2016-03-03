@@ -1,0 +1,27 @@
+{
+  "name": "upworkentranceexam",
+  "version": "1.0.0",
+  "description": "powerball scraper",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajpyoung/UpWork_EntranceExam.git"
+  },
+  "author": "Andrew John P. Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajpyoung/UpWork_EntranceExam/issues"
+  },
+  "homepage": "https://github.com/ajpyoung/UpWork_EntranceExam#readme",
+  "dependencies": {
+    "blocked": "^1.2.1",
+    "bluebird": "^3.3.3",
+    "body-parser": "^1.15.0",
+    "crawler": "^0.4.3",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}

@@ -8,7 +8,7 @@ first execute
 
 1) get the Powerball Prize
 ```
-<url location>/getPowerBallPrize
+<url location>:7771/getPowerBallPrize
 ```
 >
 >result:
@@ -20,7 +20,7 @@ first execute
 
 2) get the latest set
 ```
-<url location>/returnLatestSet
+<url location>:7771/returnLatestSet
 ```
 >
 >result:

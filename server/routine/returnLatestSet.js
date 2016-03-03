@@ -19,17 +19,27 @@ const start = function(res)
 
 function extractData(err,retVal,$,res)
 {
-	//console.log(retVal.body);
-	var targetString = retVal.body;
-	var newString = targetString.replace(/\r\n/g,"\n");
-	newString = newString.replace(/((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})\s\s/gi, '');
-	var holder = newString.split("\n");
-	holder.shift();
-	holder.pop();
-	var msg = {
-		"data":JSON.parse(JSON.stringify(holder))
-	};
-	res.json(msg);
+	try{
+		//console.log(retVal.body);
+		var targetString = retVal.body;
+		var newString = targetString.replace(/\r\n/g,"\n");
+		newString = newString.replace(/((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})\s\s/gi, '');
+		var holder = newString.split("\n");
+		holder.shift();
+		holder.pop();
+		var msg = {
+			"data":JSON.parse(JSON.stringify(holder))
+		};
+		res.json(msg);
+	}catch(err){
+		var msg = {
+			"code":err.code||"error extracting data from Powerball summary page",
+			"message":err.message||"unknown error occurred",
+			"stack":err.stack||null
+		};
+		res.json(msg);
+	}
+	
 }
 
 module.exports={
